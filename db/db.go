@@ -18,7 +18,7 @@ db, err := gorm.Open(postgres.New(postgres.Config{
   PreferSimpleProtocol: true, // disables implicit prepared statement usage. By default pgx automatically uses the extended protocol
 }), &gorm.Config{})
 */
-//NewConnection устонавливает соединение с бд postgres и возвращает базу данных
+//NewConnection устанавливает соединение с бд postgres и возвращает базу данных
 func NewConnection(dsn string) *gorm.DB {
 	conn, err := gorm.Open(postgres.Open(dsn)) // Подключение к бд
 	if err != nil {
